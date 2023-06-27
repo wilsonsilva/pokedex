@@ -4,6 +4,7 @@ import 'package:pokedex/common/pokedex_bottom_navigation_bar.dart';
 import 'package:pokedex/config/colors.dart';
 import 'package:pokedex/data/pokemon.dart';
 import 'package:pokedex/data/pokemons.dart';
+import 'package:pokedex/features/list/presentation/filter_button.dart';
 import 'package:pokedex/features/list/presentation/pokemon_search_bar.dart';
 import 'package:pokedex/features/list/presentation/pokemon_tile.dart';
 
@@ -49,28 +50,15 @@ class PokemonListScreen extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Row(
+              const Row(
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: PokemonSearchBar(),
                   ),
 
-                  const SizedBox(width: 10),
+                  SizedBox(width: 10),
 
-                  FilledButton(
-                    onPressed: () {},
-                    style: FilledButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                      ),
-                      backgroundColor: gray200,
-                      elevation: 0,
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      child: Icon(Icons.filter_list_alt, color: Colors.black),
-                    )
-                  ),
+                  FilterButton(),
                 ],
               ),
 
