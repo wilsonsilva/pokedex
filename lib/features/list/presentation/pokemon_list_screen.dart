@@ -4,6 +4,7 @@ import 'package:pokedex/common/pokedex_bottom_navigation_bar.dart';
 import 'package:pokedex/config/colors.dart';
 import 'package:pokedex/data/pokemon.dart';
 import 'package:pokedex/data/pokemons.dart';
+import 'package:pokedex/features/list/presentation/pokemon_search_bar.dart';
 import 'package:pokedex/features/list/presentation/pokemon_tile.dart';
 
 class PokemonListScreen extends StatelessWidget {
@@ -50,28 +51,8 @@ class PokemonListScreen extends StatelessWidget {
 
               Row(
                 children: [
-                  Expanded(
-                    child: SearchBar(
-                      shape: MaterialStatePropertyAll(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16.0),
-                          side: const BorderSide(color: gray200),
-                        ),
-                      ),
-                      backgroundColor: const MaterialStatePropertyAll(Colors.white),
-                      elevation: const MaterialStatePropertyAll(0),
-                      leading: const Padding(
-                        padding: EdgeInsets.only(left: 10.0),
-                        child: Icon(Icons.search),
-                      ),
-                      hintText: 'Search a pokémon',
-                      hintStyle: const MaterialStatePropertyAll(
-                        TextStyle(
-                          color: gray300,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
+                  const Expanded(
+                    child: PokemonSearchBar(),
                   ),
 
                   const SizedBox(width: 10),
