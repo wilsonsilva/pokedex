@@ -82,7 +82,6 @@ class PokemonListScreen extends StatelessWidget {
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(16.0)),
                       ),
-                      side: const BorderSide(color: gray200),
                       backgroundColor: gray200,
                       elevation: 0,
                     ),
