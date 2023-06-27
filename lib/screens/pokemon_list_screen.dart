@@ -87,7 +87,7 @@ class PokemonListScreen extends StatelessWidget {
                       elevation: 0,
                     ),
                     child: const Padding(
-                      padding: EdgeInsets.all(15.0),
+                      padding: EdgeInsets.symmetric(vertical: 15),
                       child: Icon(Icons.filter_list_alt, color: Colors.black),
                     )
                   ),
