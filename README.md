@@ -5,7 +5,7 @@ device created and designed to catalog and provide information regarding the var
 Pokémon featured in the Pokémon video game, anime and manga series.
 
 <p align="center">
-  <img src=".github/assets/home-screen.png?raw=true" alt="Home screen" width="400px"/>
+  <img src=".github/assets/home-screen.png?raw=true" alt="Home screen"/>
 </p>
 
 ## Demo
