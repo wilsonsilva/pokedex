@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart' hide BottomNavigationBar;
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:pokedex/common/pokedex_bottom_navigation_bar.dart';
 import 'package:pokedex/config/colors.dart';
 import 'package:pokedex/data/pokemon.dart';
 import 'package:pokedex/data/pokemons.dart';
-import 'package:pokedex/widgets/pokedex_bottom_navigation_bar.dart';
-import 'package:pokedex/widgets/pokemon_tile.dart';
+import 'package:pokedex/features/list/presentation/pokemon_tile.dart';
 
 class PokemonListScreen extends StatelessWidget {
   const PokemonListScreen({Key? key}) : super(key: key);

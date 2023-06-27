@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:pokedex/config/router.dart';
 import 'package:pokedex/config/theme.dart';
 import 'package:pokedex/data/pokemon.dart';
-import 'package:pokedex/widgets/type_badge.dart';
+import 'package:pokedex/features/list/presentation/type_badge.dart';
 
 class PokemonTile extends StatelessWidget {
   final Pokemon pokemon;

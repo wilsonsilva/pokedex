@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:pokedex/screens/pokemon_details_screen.dart';
-import 'package:pokedex/screens/pokemon_list_screen.dart';
+import 'package:pokedex/features/details/presentation/pokemon_details_screen.dart';
+import 'package:pokedex/features/list/presentation/pokemon_list_screen.dart';
 
 enum Routes {
   pokemonList,
