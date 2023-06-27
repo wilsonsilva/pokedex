@@ -1,13 +1,29 @@
 enum PokemonType {
+  bug,
+  dark,
+  dragon,
+  electric,
+  fairy,
+  fighting,
   fire,
-  grass
+  flying,
+  ghost,
+  grass,
+  ground,
+  ice,
+  normal,
+  poison,
+  psychic,
+  rock,
+  steel,
+  water,
 }
 
 class Pokemon {
   String name;
   int johtoPokedexNumber;
   int nationalPokedexNumber;
-  PokemonType type;
+  List<PokemonType> types;
   String avatar;
   String thumbnail;
 
@@ -15,7 +31,7 @@ class Pokemon {
     required this.name,
     required this.johtoPokedexNumber,
     required this.nationalPokedexNumber,
-    required this.type,
+    required this.types,
     required this.avatar,
     required this.thumbnail,
   });

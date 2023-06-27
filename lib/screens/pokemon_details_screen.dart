@@ -20,28 +20,22 @@ class PokemonDetailsScreen extends StatelessWidget {
 
     if (pokemon == null) {
       // Pokemon not found, display an error message or handle it accordingly
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('Pokemon details'),
-        ),
-        body: const Center(
+      return const Scaffold(
+        body: Center(
           child: Text('Pokemon not found.'),
         ),
       );
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(pokemon.name),
-        backgroundColor: pokemonTypeColors[pokemon.type],
-      ),
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-            color: pokemonTypeColors[pokemon.type]!.withOpacity(0.2),
+            color: getTypeColor(pokemon.types.first).withOpacity(0.2),
           ),
           child: Column(
             children: [
+              const BackButton(),
               const SizedBox(height: 20),
               Image.asset(
                 pokemon.avatar,
@@ -59,7 +53,7 @@ class PokemonDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                'Type: ${pokemon.type.name}',
+                'Type: ${pokemon.types.first.name}',
                 style: const TextStyle(fontSize: 18),
               ),
             ],

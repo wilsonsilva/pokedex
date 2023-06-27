@@ -15,13 +15,15 @@ final router = GoRouter(
       path: '/',
       name: Routes.pokemonList.name,
       builder: (context, state) => const PokemonListScreen(),
-    ),
-    GoRoute(
-      path: '/pokemons/:johtoPokedexNumber',
-      name: Routes.pokemonDetails.name,
-      builder: (context, state) => PokemonDetailsScreen(
-        johtoPokedexNumber: int.parse(state.pathParameters['johtoPokedexNumber']!),
-      ),
+      routes: [
+        GoRoute(
+          path: 'pokemons/:johtoPokedexNumber',
+          name: Routes.pokemonDetails.name,
+          builder: (context, state) => PokemonDetailsScreen(
+            johtoPokedexNumber: int.parse(state.pathParameters['johtoPokedexNumber']!),
+          ),
+        ),
+      ]
     ),
   ],
 );
