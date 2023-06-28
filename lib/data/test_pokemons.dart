@@ -1,6 +1,6 @@
 import 'package:pokedex/data/pokemon.dart';
 
-final List<Pokemon> pokemons = [
+final List<Pokemon> kTestPokemons = [
   Pokemon(
     name: 'Chikorita',
     johtoPokedexNumber: 1,

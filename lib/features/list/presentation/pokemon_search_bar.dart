@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokedex/config/colors.dart';
+import 'package:pokedex/features/list/presentation/pokemons_search_state_provider.dart';
 
-class PokemonSearchBar extends StatelessWidget {
+class PokemonSearchBar extends ConsumerStatefulWidget {
   const PokemonSearchBar({super.key});
+
+  @override
+  ConsumerState<PokemonSearchBar> createState() => _PokemonSearchBarState();
+}
+
+class _PokemonSearchBarState extends ConsumerState<PokemonSearchBar> {
+  final _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    // * TextEditingControllers should be always disposed
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +42,7 @@ class PokemonSearchBar extends StatelessWidget {
           fontSize: 18,
         ),
       ),
+      onChanged: (text) => ref.read(pokemonsSearchQueryStateProvider.notifier).state = text,
     );
   }
 }

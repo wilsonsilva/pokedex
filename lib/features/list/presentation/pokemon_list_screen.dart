@@ -2,11 +2,9 @@ import 'package:flutter/material.dart' hide BottomNavigationBar;
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:pokedex/common/pokedex_bottom_navigation_bar.dart';
 import 'package:pokedex/config/colors.dart';
-import 'package:pokedex/data/pokemon.dart';
-import 'package:pokedex/data/pokemons.dart';
 import 'package:pokedex/features/list/presentation/filter_button.dart';
+import 'package:pokedex/features/list/presentation/pokemon_grid_async.dart';
 import 'package:pokedex/features/list/presentation/pokemon_search_bar.dart';
-import 'package:pokedex/features/list/presentation/pokemon_tile.dart';
 
 class PokemonListScreen extends StatelessWidget {
   const PokemonListScreen({Key? key}) : super(key: key);
@@ -26,12 +24,12 @@ class PokemonListScreen extends StatelessWidget {
             alignment: Alignment.topRight,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+        child: const Padding(
+          padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'Pokédex',
                 style: TextStyle(
                   fontSize: 32,
@@ -39,47 +37,25 @@ class PokemonListScreen extends StatelessWidget {
                   color: gray500,
                 ),
               ),
-
-              const Text(
+              Text(
                 'Use the advanced search to find Pokémon by type, weakness, ability and more!',
                 style: TextStyle(
                   fontSize: 16,
                   color: gray400,
-                )
+                ),
               ),
-
-              const SizedBox(height: 25),
-
-              const Row(
+              SizedBox(height: 25),
+              Row(
                 children: [
                   Expanded(
-                    child: PokemonSearchBar(),
+                    child: PokemonSearchBar()
                   ),
-
                   SizedBox(width: 10),
-
                   FilterButton(),
                 ],
               ),
-
-              const SizedBox(height: 25),
-
-              Expanded(
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 14,
-                    mainAxisSpacing: 14,
-                    childAspectRatio: 1.25,
-                  ),
-                  itemCount: pokemons.length,
-                  itemBuilder: (context, index) {
-                    Pokemon pokemon = pokemons[index];
-
-                    return PokemonTile(pokemon);
-                  },
-                ),
-              ),
+              SizedBox(height: 25),
+              PokemonGridAsync(),
             ],
           ),
         ),
